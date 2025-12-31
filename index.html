@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Formal portfolio website." />
+  <title>Bryan Zhao</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="pill"><i class="fa-regular fa-clock"></i>Currently on Winter Break</span>
+        <a class="topbar-link" href="mailto:bryanzhao08@gmail.com"><i class="fa-regular fa-envelope"></i> bryanzhao08@gmail.com</a>
+      </div>
+      <div class="topbar-right">
+        <a class="icon-link" href="https://www.linkedin.com/in/bryan-zhao-372b98208/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/bryanzhao08" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a class="icon-link" href="https://www.instagram.com/bryanzhao08" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">BZ</span>
+        <span class="brand-text">
+          <span class="brand-name">Bryan Zhao</span>
+          <span class="brand-sub">Engineer • Volunteer • Photographer</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="siteNav" aria-label="Primary">
+        <a class="nav-link active" href="#about">About</a>
+        <a class="nav-link" href="#services">Experience</a>
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#photography">Photography</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Portfolio</p>
+          <h1 class="hero-title">Bryan Zhao</h1>
+          <p class="hero-lede">
+            c/o 2026
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#work"><i class="fa-solid fa-briefcase"></i> View projects</a>
+            <a class="btn btn-ghost" href="assets/Resume.pdf" download><i class="fa-regular fa-file-lines"></i> Download résumé</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Highlights">
+            <div class="metric">
+              <div class="metric-value">5+</div>
+              <div class="metric-label">Years building</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">5000+</div>
+              <div class="metric-label">Photos taken</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">0.5</div>
+              <div class="metric-label">Years left in high school</div>
+            </div>
+          </div>
+
+          <div class="trust-row" aria-label="Selected tools">
+            <span class="trust">C++</span>
+            <span class="trust">Python</span>
+            <span class="trust">Java</span>
+            <span class="trust">Adobe Suite</span>
+            <span class="trust">Autodesk</span>
+            <span class="trust">Onshape</span>            
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Profile card">
+          <div class="profile">
+            <div class="profile-img" role="img" aria-label="Profile photo placeholder"></div>
+            <div class="profile-body">
+              <h2 class="profile-name">Bryan Zhao</h2>
+              <p class="profile-role">Student @Saratoga H.S. / Researcher @UCSC</p>
+              <div class="profile-meta">
+                <div><i class="fa-solid fa-location-dot"></i> Bay Area, CA</div>
+                <div><i class="fa-regular fa-circle-check"></i> Open to internships & projects</div>
+              </div>
+              <div class="profile-actions">
+                <a class="btn btn-primary btn-sm" href="#photography"><i class="fa-solid fa-arrow-down"></i> Photography Portfolio</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-footer">
+            <div class="fineprint">
+              "A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">About</p>
+          <h2 class="section-title">A human-centered engineer who loves photography.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Quick Introduction</h3>
+            <ul class="checklist">
+              <li><i class="fa-regular fa-circle-check"></i> 17 year old from Saratoga, California</li>
+              <li><i class="fa-regular fa-circle-check"></i> Attending Saratoga High School and research at UCSC</li>
+              <li><i class="fa-regular fa-circle-check"></i> I like photography, cooking/eating good food, and exploring new viewpoints</li>
+              <li><i class="fa-regular fa-circle-check"></i> Favorite artists include Bruno Mars, NewJeans, Don Toliver, Travis Scott, and Rihanna</li>              
+            </ul>
+            <div class="divider"></div>
+          </div>
+
+          <div class="card card-accent">
+            <h3>Quick facts</h3>
+            <div class="facts">
+              <div class="fact">
+                <div class="fact-label">Experiences</div>
+                <div class="fact-value">CAD • Manufacturing • Circuitry • Sensors • ML • Frontend </div>
+              </div>
+              <div class="fact">
+                <div class="fact-label">Tools</div>
+                <div class="fact-value">Autodesk Inventor • Onshape • Raspberry Pi • Arduino • Python • Java • C++</div>
+              </div>
+              <div class="fact">
+                <div class="fact-label">Currently</div>
+                <div class="fact-value">Open to roles for 2026</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Focus -->
+    <section class="section section-muted" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Experience</p>
+          <h2 class="section-title">Where I have previously worked</h2>
+          <p class="section-subtitle">Not all of them, but a few important ones.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card service">
+            <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Research Intern @UCSC</h3>
+            <ul style="margin-left:0.25; padding-left:0.125;">
+              <li>previously worked on fall detection systems + algorithms</li>
+              <li>currently working on plagiarism detection</li>
+              <li>NeurIPS workshop acceptance</li>
+              <li>summer SIP program acceptance (9%)</li>
+            </ul>
+          </article>
+
+          <article class="card service">
+            <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+            <h3>Club Cofounder + Team Captain @Saratoga VEX Robotics</h3>
+            <ul style="margin-left:0.25; padding-left:0.125;">
+              <li>$200k+ raised, 100+ annual applicants, 1000+ hours spent</li>
+              <li>world top 4 (top 0.02%)</li>
+              <li>custom manufactured+designed acetal homopolymer, steel, and aluminum for robots</li>
+              <li>programmed odometric movement and computer vision sensor alignment</li>
+            </ul>
+          </article>
+
+          <article class="card service">
+            <div class="service-icon"><i class="fa-solid fa-tree"></i></div>
+            <h3>Summer Intern @Stanford HAI</h3>
+            <ul style="margin-left:0.25; padding-left:0.125;">
+              <li>worked with Stanford PhD researchers</li>
+              <li>developed aircraft taxiing heading and yaw error correction model</li>
+              <li>lectures from Fei-Fei Li, Stanford faculty, and industry experts</li>
+              <li>4-6% acceptance rate</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Work</p>
+          <h2 class="section-title">Selected projects</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="thumb-chip">Electrical/Computer</div>
+            </div>
+            <div class="work-body">
+              <h3>Dual-Model Distillation for Senior Fall Detection</h3>
+              <p class="muted">
+                Accepted by 2024 NeurIPS Workshop for Video-Language Models. Boosted accuracy by 5%, reduced computation time/cost by 40%.
+              </p>
+              <div class="work-tags">
+                <span>Python</span><span>PyTorch</span><span>Computer Vision</span>
+              </div>
+              <div class="work-actions">
+                <a class="btn btn-outline btn-sm" href="https://github.com/plasmapotatos/fall-detection-switcher-model"><i class="fa-solid fa-arrow-up-right-from-square"></i> Code</a>
+                <a class="btn btn-primary btn-sm" href="https://arxiv.org/pdf/2410.12165"><i class="fa-regular fa-file-lines"></i> Write‑up</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-thumb thumb-2" aria-hidden="true">
+              <div class="thumb-chip">Mechanical/Computer</div>
+            </div>
+            <div class="work-body">
+              <h3>95071X 2025 World Championship Robot</h3>
+              <p class="muted">
+                Developed the first robot to adopt the tipper latch - hooking onto goals to snap them out of pneumatic clamps and corners. Lost in Worlds Semifinals double-DQ replay by 2 points.
+              </p>
+              <div class="work-tags">
+                <span>CAD</span><span>Manufacturing</span><span>Odometry</span>
+              </div>
+              <div class="work-actions">
+                <a class="btn btn-outline btn-sm" href="https://www.youtube.com/watch?v=8l5D7alsf00"><i class="fa-solid fa-arrow-up-right-from-square"></i> Worlds Recap</a>
+                <a class="btn btn-primary btn-sm" href="https://cad.onshape.com/documents/7479b464c9f3d093eac60626/w/0a67396d4cc81b5f3a307af2/e/23f379973e3093e9eeca76c6?renderMode=0&uiState=69546bb177693754394a5e42"><i class="fa-regular fa-file-lines"></i> Robot CAD</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-thumb thumb-3" aria-hidden="true">
+              <div class="thumb-chip">Mechannical/Electrical</div>
+            </div>
+            <div class="work-body">
+              <h3>95071X 2024 World Championship Robot</h3>
+              <p class="muted">
+                Built the only robot having a transmission-powered winch that hung to the highest tier (H-tier) and a cross-bar C-tier hybrid climb.
+              </p>
+              <div class="work-tags">
+                <span>CAD</span><span>Sensors</span><span>Manufacturing</span>
+              </div>
+              <div class="work-actions">
+                <a class="btn btn-outline btn-sm" href="https://www.youtube.com/watch?v=Jg8W1QeCJ8s"><i class="fa-regular fa-folder-open"></i> Worlds Teaser</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography -->
+    <section class="section" id="photography">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Photography</p>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-subtitle">
+            A few photos I've taken over the years.
+          </p>
+        </div>
+
+        <div class="photo-grid" aria-label="Photography gallery">
+          <a class="photo-tile" href="assets/photos/photo1.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo1.jpg" alt="Boat Exiting Sea Cave — Na Pali • Hawaii" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">Boat Exiting Sea Cave</div>
+              <div class="photo-sub">Na Pali • Hawaii</div>
+            </div>
+          </a>
+
+          <a class="photo-tile" href="assets/photos/photo2.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo2.jpg" alt="Flight of Faith — Saratoga • California" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">Flight of Faith</div>
+              <div class="photo-sub">Saratoga • California</div>
+            </div>
+          </a>
+
+          <a class="photo-tile" href="assets/photos/photo3.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo3.jpg" alt="Emerald-shrouded Sapphire — Saratoga • California" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">Emerald-shrouded Sapphire</div>
+              <div class="photo-sub">Saratoga • California</div>
+            </div>
+          </a>
+
+          <a class="photo-tile" href="assets/photos/photo4.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo4.jpg" alt="Tranquil Bonds — La Jolla • California" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">Tranquil Bonds</div>
+              <div class="photo-sub">La Jolla • California</div>
+            </div>
+          </a>
+
+          <a class="photo-tile" href="assets/photos/photo5.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo5.jpg" alt="One Last Time — Saratoga • California" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">One Last Time</div>
+              <div class="photo-sub">Saratoga • California</div>
+            </div>
+          </a>
+
+          <a class="photo-tile" href="assets/photos/photo6.jpg" target="_blank" rel="noopener">
+            <img src="assets/photos/photo6.jpg" alt="Quiet Motion — Documentary • Candid" loading="lazy" />
+            <div class="photo-cap">
+              <div class="photo-title">Ribbit</div>
+              <div class="photo-sub">Saratoga • California</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-small">
+          <span class="brand-mark" aria-hidden="true">BZ</span>
+          <span>© <span id="year"></span> Bryan Zhao</span>
+        </div>
+        <p class="muted">Thanks for coming all the way down here!<br><span class="muted">Coded with HTML, CSS, and JavaScript.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
