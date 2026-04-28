@@ -22,6 +22,10 @@
 </head>
 
 <body>
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
   <div class="background-gif"></div>
   <div class="background-overlay"></div>
 
@@ -385,6 +389,22 @@
       </div>
     </section>
   </main>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lb-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button id="lb-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div id="lb-inner">
+      <img id="lb-img" src="" alt="" />
+      <p id="lb-caption"></p>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-inner">
