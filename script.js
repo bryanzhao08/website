@@ -97,12 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const metrics = document.querySelectorAll(".metric-value");
 
   function animateCounter(el) {
-    const raw = el.textContent.trim();           // e.g. "5000+"
-    const suffix = raw.replace(/[\d,]/g, "");       // "+"
+    const raw = (el.dataset.target || el.textContent).trim(); // e.g. "5000+"
+    const suffix = raw.replace(/[\d,]/g, "");                  // "+"
     const target = parseInt(raw.replace(/[^\d]/g, ""), 10);
     if (isNaN(target)) return;
 
-    const duration = 1400;
+    const duration = 1800;
     const start = performance.now();
 
     const tick = (now) => {
@@ -115,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(tick);
   }
 
+  // Store original values before animation, then trigger on load with delay
+  metrics.forEach(m => m.dataset.target = m.textContent.trim());
+
   const counterObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -122,9 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
         counterObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.4 });
 
-  metrics.forEach(m => counterObs.observe(m));
+  metrics.forEach(m => {
+    // Zero out immediately so there's no flash of the final number
+    const suffix = m.textContent.trim().replace(/[\d,]/g, "");
+    m.textContent = "0" + suffix;
+    counterObs.observe(m);
+  });
 
   /* ----------------------------------------------------------
      7. Custom cursor
@@ -182,7 +190,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------------
-     9. Back-to-top button
+     9. Experience slider controls
+  ---------------------------------------------------------- */
+  const expSlider = document.getElementById("expSlider");
+  const expPrev = document.querySelector(".exp-prev");
+  const expNext = document.querySelector(".exp-next");
+
+  if (expSlider && expPrev && expNext) {
+    expPrev.addEventListener("click", () => {
+      const amount = expSlider.clientWidth * 0.8;
+      if (expSlider.scrollLeft <= 10) {
+        expSlider.scrollTo({ left: expSlider.scrollWidth, behavior: "smooth" });
+      } else {
+        expSlider.scrollBy({ left: -amount, behavior: "smooth" });
+      }
+    });
+    expNext.addEventListener("click", () => {
+      const amount = expSlider.clientWidth * 0.8;
+      if (Math.ceil(expSlider.scrollLeft + expSlider.clientWidth) >= expSlider.scrollWidth - 10) {
+        expSlider.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        expSlider.scrollBy({ left: amount, behavior: "smooth" });
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------
+     10. Back-to-top button
   ---------------------------------------------------------- */
   const btt = document.getElementById("back-to-top");
   if (btt) {
@@ -190,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btt.classList.toggle("btt-visible", window.scrollY > 400);
     }, { passive: true });
     btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
   }
 
   /* ----------------------------------------------------------
@@ -247,8 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Slider scroll controls
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.photo-prev');
+    const nextBtn = document.querySelector('.photo-next');
     if (prevBtn && nextBtn) {
       prevBtn.addEventListener('click', () => {
         const scrollAmount = photoSlider.clientWidth * 0.8;
