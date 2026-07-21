@@ -10,7 +10,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -21,7 +23,7 @@
 
 <body>
   <div class="texture-overlay"></div>
-  
+
   <!-- Custom cursor -->
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
@@ -81,7 +83,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Portfolio</p>
+
           <h1 class="hero-title">Bryan Zhao</h1>
           <p class="hero-lede">
 
@@ -137,7 +139,7 @@
 
           <div class="hero-card-footer">
             <div class="fineprint">
-              "A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd
+              "Even if you are not ready for the day, it cannot always be night" - Gwendolyn Brooks
             </div>
           </div>
         </div>
@@ -390,8 +392,157 @@
 
     <!-- Photography -->
     <section class="section" id="photography">
-      <div class="container" style="max-width: 100%;">
-        <div id="photography-react-root" style="width: 100%;"></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Photography</p>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-subtitle">
+            A few photos I've taken over the years. Click on any photo to see details.
+          </p>
+        </div>
+
+        <!-- Urban Section -->
+        <div class="photo-category-section">
+          <h3 class="category-title">Urban</h3>
+          <div class="photo-scroll-container">
+            <div class="photo-card" data-src="assets/photos/photo 11.jpg" data-title="Cyberpunk City"
+              data-sub="Tokyo • Japan"
+              data-details="The organized chaos of one of the busiest intersections in the world, filled with an endless sea of umbrellas and neon lights.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo 11.jpg" alt="Cyberpunk City" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Cyberpunk City</h4>
+                  <p>Tokyo • Japan</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="photo-card" data-src="assets/photos/shanghai.jpg" data-title="The Bund"
+              data-sub="Shanghai • China"
+              data-details="Looking over the Bund as vibrant neon lights reflect beautifully off the dark river waters.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/shanghai.jpg" alt="The Bund" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>The Bund</h4>
+                  <p>Shanghai • China</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/shinjuku.jpg" data-title="Shinjuku Neon"
+              data-sub="Tokyo • Japan"
+              data-details="The dazzling streetscape of Shinjuku at night, where tradition meets a futuristic cyberpunk aesthetic.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/shinjuku.jpg" alt="Shinjuku Neon" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Shinjuku Neon</h4>
+                  <p>Tokyo • Japan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nature Section -->
+        <div class="photo-category-section">
+          <h3 class="category-title">Nature</h3>
+          <div class="photo-scroll-container">
+            <div class="photo-card" data-src="assets/photos/photo1.jpg" data-title="Boat Exiting Sea Cave"
+              data-sub="Na Pali • Hawaii"
+              data-details="A stunning view from within a sea cave on the Na Pali coast, captured during a boat tour. The natural light filtering through the opening creates a magical atmosphere and highlights the textures of the volcanic rock.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo1.jpg" alt="Boat Exiting Sea Cave" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Boat Exiting Sea Cave</h4>
+                  <p>Na Pali • Hawaii</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="photo-card" data-src="assets/photos/photo3.jpg" data-title="Emerald-shrouded Sapphire"
+              data-sub="Saratoga • California"
+              data-details="The vibrant blue of the water contrasting with the lush green foliage. Taken at a hidden spring, this photo highlights the purity and stillness of the local ecosystem.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo3.jpg" alt="Emerald-shrouded Sapphire" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Emerald-shrouded Sapphire</h4>
+                  <p>Saratoga • California</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/photo4.jpg" data-title="Tranquil Bonds"
+              data-sub="La Jolla • California"
+              data-details="A peaceful scene by the coast in La Jolla, reflecting the quiet beauty of nature and the rhythmic flow of the Pacific tides against the rugged shoreline.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo4.jpg" alt="Tranquil Bonds" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Tranquil Bonds</h4>
+                  <p>La Jolla • California</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/photo6.jpg" data-title="Ribbit"
+              data-sub="Saratoga • California"
+              data-details="A macro shot of a local inhabitant, highlighting the intricate details and vibrant colors of nature that often go unnoticed in our daily lives.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo6.jpg" alt="Ribbit" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Ribbit</h4>
+                  <p>Saratoga • California</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/photo7.jpg" data-title="Winter Wonderland"
+              data-sub="Ukkusissat • Greenland"
+              data-details="An aerial shot of the Arctic, covering a massive canyon, filled with smooth silky ice.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo7.jpg" alt="Winter Wonderland" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Winter Wonderland</h4>
+                  <p>Ukkusissat • Greenland</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Life Section -->
+        <div class="photo-category-section">
+          <h3 class="category-title">Life</h3>
+          <div class="photo-scroll-container">
+            <div class="photo-card" data-src="assets/photos/photo5.jpg" data-title="One Last Time"
+              data-sub="Saratoga • California"
+              data-details="A nostalgic look at a local landmark during the golden hour, symbolizing the end of an era and the fleeting beauty of a California sunset.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo5.jpg" alt="One Last Time" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>One Last Time</h4>
+                  <p>Saratoga • California</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/photo2.jpg" data-title="Flight of Faith"
+              data-sub="Saratoga • California"
+              data-details="A candid moment of movement and grace captured in the heart of Saratoga. This shot captures the split-second beauty of a bird in flight, frozen against the backdrop of the afternoon sun.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo2.jpg" alt="Flight of Faith" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Flight of Faith</h4>
+                  <p>Saratoga • California</p>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card" data-src="assets/photos/photo8.jpg" data-title="Mona Lisa" data-sub="Paris • France"
+              data-details="Amidst the view of the most recognizable painting, people turn into statues as they try to capture their own version of her.">
+              <div class="photo-card-img-wrapper">
+                <img src="assets/photos/photo8.jpg" alt="Mona Lisa" loading="lazy" />
+                <div class="photo-card-caption">
+                  <h4>Mona Lisa</h4>
+                  <p>Paris • France</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -431,7 +582,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

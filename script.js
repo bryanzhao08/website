@@ -228,89 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------------
-     10. Photography - Random Selection from Photo Bank
+     10. Photography - Lightbox with Horizontal Scroll
   ---------------------------------------------------------- */
-  const photosData = [
-    { id: 1, src: 'assets/photos/photo1.jpg', title: 'Boat Exiting Sea Cave', sub: 'Na Pali • Hawaii', details: 'A stunning view from within a sea cave on the Na Pali coast, captured during a boat tour. The natural light filtering through the opening creates a magical atmosphere and highlights the textures of the volcanic rock.' },
-    { id: 2, src: 'assets/photos/photo2.jpg', title: 'Flight of Faith', sub: 'Saratoga • California', details: 'A candid moment of movement and grace captured in the heart of Saratoga. This shot captures the split-second beauty of a bird in flight, frozen against the backdrop of the afternoon sun.' },
-    { id: 3, src: 'assets/photos/photo3.jpg', title: 'Emerald-shrouded Sapphire', sub: 'Saratoga • California', details: 'The vibrant blue of the water contrasting with the lush green foliage. Taken at a hidden spring, this photo highlights the purity and stillness of the local ecosystem.' },
-    { id: 4, src: 'assets/photos/photo4.jpg', title: 'Tranquil Bonds', sub: 'La Jolla • California', details: 'A peaceful scene by the coast in La Jolla, reflecting the quiet beauty of nature and the rhythmic flow of the Pacific tides against the rugged shoreline.' },
-    { id: 5, src: 'assets/photos/photo5.jpg', title: 'One Last Time', sub: 'Saratoga • California', details: 'A nostalgic look at a local landmark during the golden hour, symbolizing the end of an era and the fleeting beauty of a California sunset.' },
-    { id: 6, src: 'assets/photos/photo6.jpg', title: 'Ribbit', sub: 'Saratoga • California', details: 'A macro shot of a local inhabitant, highlighting the intricate details and vibrant colors of nature that often go unnoticed in our daily lives.' },
-    { id: 7, src: 'assets/photos/photo7.jpg', title: 'Winter Wonderland', sub: 'Ukkusissat • Greenland', details: 'An aerial shot of the Arctic, covering a massive canyon, filled with smooth silky ice.' },
-    { id: 8, src: 'assets/photos/photo8.jpg', title: 'Mona Lisa', sub: 'Paris • France', details: 'Amidst the view of the most recognizable painting, people turn into statues as they try to capture their own version of her.' },
-    { id: 9, src: 'assets/photos/photo9.jpg', title: 'Candelit Dinner', sub: 'San Francisco • California', details: 'The dim lighting and clinking glasses created a warm and intimate atmosphere.' },
-    { id: 10, src: 'assets/photos/photo10.jpg', title: 'Cyberpunk City', sub: 'Shanghai • China', details: 'The city lights and skyscrapers capture the vibrant and futuristic atmosphere of the city.' },
-  ];
-
-  const photoSlider = document.getElementById('photoSlider');
-
-  // Shuffle array function
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  function renderGallery() {
-    if (!photoSlider) return;
-
-    const shuffledPhotos = shuffle([...photosData]);
-
-    photoSlider.innerHTML = shuffledPhotos.map((photo, index) => `
-      <a class="photo-tile" href="${photo.src}" data-index="${index}">
-        <img src="${photo.src}" alt="${photo.title}" loading="lazy" />
-        <div class="photo-cap">
-          <div class="photo-title">${photo.title}</div>
-          <div class="photo-sub">${photo.sub}</div>
-        </div>
-      </a>
-    `).join('');
-
-    // Observe new tiles for scroll-reveal & bind clicks
-    document.querySelectorAll('.photo-tile').forEach((tile, i) => {
-      tile.classList.add('reveal');
-      tile.style.transitionDelay = `${(i % 3) * 80}ms`;
-      revealObs.observe(tile);
-
-      tile.addEventListener('click', e => {
-        e.preventDefault();
-        openLightbox(parseInt(tile.dataset.index), shuffledPhotos);
-      });
-    });
-
-    // Slider scroll controls
-    const prevBtn = document.querySelector('.photo-prev');
-    const nextBtn = document.querySelector('.photo-next');
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => {
-        const scrollAmount = photoSlider.clientWidth * 0.8;
-        if (photoSlider.scrollLeft <= 10) {
-          // If at the very beginning, scroll to the end
-          photoSlider.scrollTo({ left: photoSlider.scrollWidth, behavior: 'smooth' });
-        } else {
-          photoSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-      });
-      nextBtn.addEventListener('click', () => {
-        const scrollAmount = photoSlider.clientWidth * 0.8;
-        if (Math.ceil(photoSlider.scrollLeft + photoSlider.clientWidth) >= photoSlider.scrollWidth - 10) {
-          // If at the end, scroll back to start
-          photoSlider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          photoSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      });
-    }
-  }
-
-  renderGallery();
-
-  /* ----------------------------------------------------------
-     11. Photo lightbox
-  ---------------------------------------------------------- */
+  const photoCards = document.querySelectorAll(".photo-card");
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lb-img");
   const lbTitle = document.getElementById("lb-title");
@@ -320,19 +240,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const lbPrev = document.getElementById("lb-prev");
   const lbNext = document.getElementById("lb-next");
 
-  let lbIndex = 0;
-  let currentSet = [];
+  let currentPhotoIndex = 0;
+  const photoCardsArray = [...photoCards];
 
-  function openLightbox(index, photoSet) {
-    lbIndex = index;
-    currentSet = photoSet;
-    const photo = currentSet[index];
+  function openLightbox(index) {
+    if (index < 0 || index >= photoCardsArray.length) return;
+    currentPhotoIndex = index;
+    const card = photoCardsArray[index];
+    if (!card) return;
 
-    lbImg.src = photo.src;
-    lbImg.alt = photo.title;
-    lbTitle.textContent = photo.title;
-    lbSub.textContent = photo.sub;
-    lbDetails.textContent = photo.details;
+    lbImg.src = card.dataset.src;
+    lbImg.alt = card.dataset.title;
+    lbTitle.textContent = card.dataset.title;
+    lbSub.textContent = card.dataset.sub;
+    lbDetails.textContent = card.dataset.details;
 
     lb.classList.add("lb-open");
     document.body.style.overflow = "hidden";
@@ -346,9 +267,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function stepLightbox(dir) {
-    lbIndex = (lbIndex + dir + currentSet.length) % currentSet.length;
-    openLightbox(lbIndex, currentSet);
+    const nextIndex = (currentPhotoIndex + dir + photoCardsArray.length) % photoCardsArray.length;
+    openLightbox(nextIndex);
   }
+
+  photoCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      openLightbox(index);
+    });
+  });
 
   lbClose?.addEventListener("click", closeLightbox);
   lbPrev?.addEventListener("click", () => stepLightbox(-1));
