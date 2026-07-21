@@ -10,7 +10,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -20,11 +22,12 @@
 </head>
 
 <body>
-  <div class="texture-overlay"></div>
-  
   <!-- Custom cursor -->
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
+
+  <div class="background-gif"></div>
+  <div class="background-overlay"></div>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -84,7 +87,7 @@
           <p class="eyebrow">Portfolio</p>
           <h1 class="hero-title">Bryan Zhao</h1>
           <p class="hero-lede">
-
+            c/o 2026
           </p>
 
           <div class="hero-cta">
@@ -94,7 +97,7 @@
           </div>
 
           <div class="hero-metrics" aria-label="Highlights">
-            <div class="metric liquid-glass">
+            <div class="metric">
               <div class="metric-value">5+</div>
               <div class="metric-label">Years building</div>
             </div>
@@ -156,10 +159,12 @@
           <div class="card">
             <h3>Quick Introduction</h3>
             <ul class="checklist">
-              <li><i class="fa-regular fa-circle-check"></i> Incoming freshman at USC</li>
+              <li><i class="fa-regular fa-circle-check"></i> 17 year old from Saratoga, California</li>
+              <li><i class="fa-regular fa-circle-check"></i> Attending Saratoga High School and research at UCSC</li>
               <li><i class="fa-regular fa-circle-check"></i> I like photography, cooking/eating good food, and exploring
                 new viewpoints</li>
-
+              <li><i class="fa-regular fa-circle-check"></i> Favorite artists include Bruno Mars, NewJeans, Don Toliver,
+                Travis Scott, and Rihanna</li>
             </ul>
             <div class="divider"></div>
 
@@ -201,8 +206,8 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker">Experience</p>
-          <h2 class="section-title">Previous Work Experience</h2>
-          <p class="section-subtitle">A selection of my professional journey.</p>
+          <h2 class="section-title">Where I have previously worked</h2>
+          <p class="section-subtitle">Not all of them, but a few important ones.</p>
         </div>
 
         <div class="slider-wrapper">
@@ -390,8 +395,53 @@
 
     <!-- Photography -->
     <section class="section" id="photography">
-      <div class="container" style="max-width: 100%;">
-        <div id="photography-react-root" style="width: 100%;"></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Photography</p>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-subtitle">A few photos I've taken over the years.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="photo-tabs" role="tablist">
+          <button class="photo-tab active" role="tab" aria-selected="true" data-category="urban">Urban</button>
+          <button class="photo-tab" role="tab" aria-selected="false" data-category="nature">Nature</button>
+          <button class="photo-tab" role="tab" aria-selected="false" data-category="human">Human</button>
+        </div>
+
+        <!-- Urban -->
+        <div class="photo-category active" id="cat-urban">
+          <div class="slider-wrapper">
+            <button class="slider-btn prev-btn photo-prev" aria-label="Previous photos"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="photo-slider" id="photoSliderUrban" aria-label="Urban photography gallery">
+              <!-- populated by JS -->
+            </div>
+            <button class="slider-btn next-btn photo-next" aria-label="Next photos"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Nature -->
+        <div class="photo-category" id="cat-nature">
+          <div class="slider-wrapper">
+            <button class="slider-btn prev-btn photo-prev-nature" aria-label="Previous photos"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="photo-slider" id="photoSliderNature" aria-label="Nature photography gallery">
+              <!-- populated by JS -->
+            </div>
+            <button class="slider-btn next-btn photo-next-nature" aria-label="Next photos"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Human -->
+        <div class="photo-category" id="cat-human">
+          <div class="slider-wrapper">
+            <button class="slider-btn prev-btn photo-prev-human" aria-label="Previous photos"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="photo-slider" id="photoSliderHuman" aria-label="Human photography gallery">
+              <!-- populated by JS -->
+            </div>
+            <button class="slider-btn next-btn photo-next-human" aria-label="Next photos"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -431,7 +481,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
